@@ -1,24 +1,14 @@
 button {
     animation: 0.4s ease-in 0s 1 jump;
     color: ghostwhite;
-    background: #86c0de;
-    box-shadow: 0 6px 0 hsl(200deg 37% 50%), 0 12px 0 rgba(0, 0, 0, .2);
+    background: #8696de;
+    box-shadow: 0 6px 0 rgb(80, 129, 175), 0 12px 0 rgba(0, 0, 0, .2);
     transition: color .3s, background .3s, box-shadow .3s, transform .3s;
     transition-duration: .4s;
 } 
     button:hover {
     
     }
-
-#js-question{
-  color: #ffffff;
-  width: 50%;
-  height: 50%;
-  border-style: solid;
-  border-width: 20px;
-  background-color: #1f1f1f;
-  border-color: #363636 #1d1d1d #0f0f0f #383838;
-}
 
 @keyframes jump {
     0% {
@@ -55,89 +45,32 @@ button {
     
 }
 
-body {
-    background-color: #222222;
-    background: repeating-linear-gradient(
-        45deg,
-        #2b2b2b 0%,
-        #2b2b2b 10%,
-        #222222 0%,
-        #222222 50%
-      )
-      0 / 15px 15px;
-  }
-  
-
-  @import url(https://fonts.googleapis.com/css?family=Lato:900);
-*, *:before, *:after{
-  box-sizing:border-box;
-}
-body{
-  font-family: 'Lato', sans-serif;
-}
-div.foo{
-  width: 90%;
-  margin: 50px auto;
-  text-align: center;
-}
-.letter{
-  display: inline-block;
-  font-weight: 900;
-  font-size: 8em;
-  margin: 0.2em;
-  position: relative;
-  color: #7efbff;
-  transform-style: preserve-3d;
-  perspective: 400;
-  z-index: 1;
-}
-.letter:before, .letter:after{
-  position:absolute;
-  content: attr(data-letter);
-  transform-origin: top left;
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, rgb(0, 102, 255) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:0.5;
+  position:fixed;
+  right:-50%;
   top:0;
-  left:0;
-}
-.letter, .letter:before, .letter:after{
-  transition: all 0.3s ease-in-out;
-}
-.letter:before{
-  color: rgb(95, 95, 95);
-  text-shadow: 
-    -1px 0px 1px rgb(255, 255, 255),
-    1px 0px 1px rgba(0,0,0,.8);
-  z-index: 3;
-  transform:
-    rotateX(0deg)
-    rotateY(-15deg)
-    rotateZ(0deg);
-}
-.letter:after{
-  color: rgba(0, 0, 0, 0.11);
-  z-index:2;
-  transform:
-    scale(1.08,1)
-    rotateX(0deg)
-    rotateY(0deg)
-    rotateZ(0deg)
-    skew(0deg,1deg);
-}
-.letter:hover:before{
-  color: #838383;
-  transform:
-    rotateX(0deg)
-    rotateY(-40deg)
-    rotateZ(0deg);
-}
-.letter:hover:after{
-  transform:
-    scale(1.08,1)
-    rotateX(0deg)
-    rotateY(40deg)
-    rotateZ(0deg)
-    skew(0deg,22deg);
+  z-index:-1;
 }
 
-.foo {
-    margin-top: 50px;
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
 }
